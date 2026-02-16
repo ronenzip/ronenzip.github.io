@@ -58,6 +58,7 @@ export class AutofillHelper implements BrowserContext {
     async triggerAutofill(selector: string, options: TriggerAutofillOptions, selectorOptions?: SelectorOptions): Promise<void> {
         const hasAddress = options.address !== undefined && options.address !== null;
         const hasCard = options.card !== undefined && options.card !== null;
+        // Validate exactly one option is provided: XOR check (both true or both false is invalid)
         if (hasAddress === hasCard) {
             throw new Error("triggerAutofill requires exactly one of address or card in options");
         }

@@ -7,13 +7,19 @@
  */
 export namespace Protocol {
     export namespace Autofill {
+        /**
+         * Address autofill data
+         * Common fields: street, city, state, zip, country
+         */
         export interface Address {
-            // Address autofill fields
             [key: string]: string;
         }
 
+        /**
+         * Credit card autofill data
+         * Common fields: number, name, expiry, cvv
+         */
         export interface CreditCard {
-            // Credit card autofill fields
             [key: string]: string;
         }
 
